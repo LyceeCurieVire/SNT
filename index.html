@@ -108,20 +108,24 @@ et qui attend les connections sur un port de numéro bien défini, afin de répo
 <h3>Acronymes</h3>
 
 <ul>
-  <li><strong>TCP</strong></li> Transmission Control Protocol
-  <li><strong>IP</strong></li> Internet Protocol
-  <li><strong>UDP</strong></li> User Datagram Protocol
-  <li><strong>DNS</strong></li> Domain Name Service
-  <li><strong>ICMP</strong></li> Internet Control Message Protocol
-  <li><strong>ICMP Echo Request (Ping)</strong></li> 
-  <li><strong>HTTP</strong></li> HyperText Transfert Protocol
-  <li><strong>HTTPS</strong></li> HyperText Transfert Protocol Secured
-  <li><strong>FTP</strong></li> File Transfert Protocol
-  <li><strong>SMTP</strong></li> Simple Mail Transfert Protocol
-  <li><strong>POP3</strong></li> Post Office Protocol
-  <li><strong>IMAP</strong></li> Internet Message Access Protocol
-  <li><strong>IRC</strong></li> Internet Relay Chat
-  <li><strong>SSH</strong></li> Secure SHell
+  <li><strong>TCP</strong></li> Transmission Control Protocol Ce protocole sert à découper les informations transmises d'un ordinateur à un autre en paquets, 
+  à vérifier que ces paquets sont bien arrivés (avec un système d'accusé de réception), et à réassembler les paquets dans le bon ordre à l'arrivée.
+  <li><strong>IP</strong></li> Internet Protocol Ce protocole est un protocole de routage qui envoie un paquet d'un ordinateur à un autre à travers les réseaux. 
+  <li><strong>UDP</strong></li> User Datagram Protocol Ce protocole s'appuie sur IP pour envoyer des paquets isolés, sans contrôle d'acheminement, 
+  en laissant à l'application qui utilise UDP le soin de vérifier si les paquets sont bien arrivés (en général en revoyant un paquet au bout d'un certain temps sans 
+  réponse de la part de l'ordinateur distant).
+  <li><strong>DNS</strong></li> Domain Name Service Ce service d'annuaire transforme les adresses internet symboliques du type www.site.fr en adresses numériques IPv4 ou IPv6,
+  qui sont les seules comprises par IP.
+  <li><strong>ICMP</strong></li> Internet Control Message Protocol permet l'échange de messages de contrôle, utilisés en particulier pou les pings.
+  <li><strong>ICMP Echo Request (Ping)</strong></li> Ping est une commande qui permet de tester la connection à un ordinateur distant.
+  <li><strong>HTTP</strong></li> HyperText Transfert Protocol C'est le protocole utilisé par le web, pour la communication entre un navigateur et un serveur.
+  <li><strong>HTTPS</strong></li> HyperText Transfert Protocol Secure la même chose que http mais les communications sont cryptées de bout en bout.
+  <li><strong>FTP</strong></li> File Transfert Protocol Un protocle utilisé pour échanger des fichiers entre ordinateurs.
+  <li><strong>SMTP</strong></li> Simple Mail Transfert Protocol Un protocole qui sert à envoyer des mails.
+  <li><strong>POP3</strong></li> Post Office Protocol 3 Ce protocole permet de récupérer des mails en se connectant à un serveur mail.
+  <li><strong>IMAP</strong></li> Internet Message Access Protocol Ce protocole permet de consulter des mails en ligne et de gérer les mails sur le serveur, sans avoir à les télécharger sur le client.
+  <li><strong>IRC</strong></li> Internet Relay Chat C'est un protocole de discussion en mode texte sur internet, qui date de la fin des années 1980
+  <li><strong>SSH</strong></li> Secure SHell Le protocole SSH permet de se conecter à distance sur un ordianteur en ayant accès à un shell (une console) de façon sécurisée.
 </ul>
 
 <h3>Travail à faire</h3>
