@@ -73,6 +73,67 @@ Nous allons donc rester sur un <a href="cahier.html">cahier des charges</a> asse
 
 <h2>Internet</h2>
 
+<h3>Notion de réseau</h3>
+
+Un réseau est un enesmble d'ordinateurs reliés entre eux par des cables ou par ondes afin de pouvoir échanger des données. 
+Ces échanges de données nécessitent de nombreux protocoles, que ce soit au niveau électrique (connecteurs, voltages, fréquences des ondes) 
+ou bien au niveau du format des données échangées, mais encore au niveau du système d'exploitation : que doit faire l'ordinateur des données qu'il reçoit, quels programmes doivent les traiter ?
+
+<h3>L'internet</h3>
+
+L'internet, né dans les années 1970, est un ensemble de protocoles permettant de relier des réseaux entre eux. Essentiellement l'internet repose sur les protocoles TCP et IP.<br/>
+
+Le protocole IP (Internet Protocol) permet de faire passer des paquets de données d'un ordinateur à un autre, y compris lorsque ces ordinateurs ne sont pas directement connectés. <br/>
+
+Le protocole TCP (Transfert Control Protocol) gère la connection de bout en bout : contrôle de la bonne arrivée des paquets, numérotation des paquets pour qu'ils soient remis dans l'ordre à l'arrivée si nécessaire, etc. <br/>
+
+Le protocole UDP (User Datagram Protocol) utilise IP pour transmettre des datagrammes (des paquets de données) sans contrôle sur la bonne transmission. <br/>
+
+<h3>Adresses IP</h3>
+
+Dans la version 4 du protocole IP, appelée IPv4, chaque ordinateur sur internet possède une adresse numérique sur 4 octets,
+en général notée en donnant les écritures décimales des quatre octets, séparées par des points, p.ex 192.168.1.12 ou 10.235.22.117
+qui sont utilisées pour le routage des paquets à travers les réseaux interconnectés qui constituent l'internet. <br/>
+
+Chaque paquet IP envoyé sur internet contient alors entre autres informations l'adresse de l'expéditeur et l'adresse du destinataire,
+ainsi que des numéros de <strong>ports</strong> (sur deux octets, de 0 à 65535) pour l'expéditeur ainsi que pour le destinataire. 
+En effet, plusieurs programmes peuvent utiliser internet en même temps sur un même ordinateur, et il faut délivrer le paquet au bon destinataire. <br/> 
+
+
+<h3>Services</h3>
+
+Par dessus le protocole TCP/IP existent bien d'autres protocoles, comme http, ftp, smtp ou pop3... Chacun de ces services est un programme qui s'exécute sur un serveur 
+et qui attend les connections sur un port de numéro bien défini, afin de répondre aux requêtes.
+
+<h3>Acronymes</h3>
+
+<ul>
+  <li><strong>TCP</strong></li> Transmission Control Protocol
+  <li><strong>IP</strong></li> Internet Protocol
+  <li><strong>UDP</strong></li> User Datagram Protocol
+  <li><strong>DNS</strong></li> Domain Name Service
+  <li><strong>ICMP</strong></li> Internet Control Message Protocol
+  <li><strong>ICMP Echo Request (Ping)</strong></li> 
+  <li><strong>HTTP</strong></li> HyperText Transfert Protocol
+  <li><strong>HTTPS</strong></li> HyperText Transfert Protocol Secured
+  <li><strong>FTP</strong></li> File Transfert Protocol
+  <li><strong>SMTP</strong></li> Simple Mail Transfert Protocol
+  <li><strong>POP3</strong></li> Post Office Protocol
+  <li><strong>IMAP</strong></li> Internet Message Access Protocol
+  <li><strong>IRC</strong></li> Internet Relay Chat
+  <li><strong>SSH</strong></li> Secure SHell
+</ul>
+
+<h3>Travail à faire</h3>
+
+Nous allons utiliser le logiciel <a href="https://www.lernsoftware-filius.de/Herunterladen">Filius</a> qui permet de simuler un réseau TCP/IP de façon graphique. <br/>
+
+Après avoir installé Filius, commencer le <a href="./Activite3-Filius-2019V1.pdf">TP</a>. <br/>
+
+Deux fichiers peuvent être utiles, <a href="exercice4_ressources.fls">exercice4_ressources.fls</a> et 
+<a href="exercice4bis_ressources.fls">exercice4_ressources.fls</a>.
+
+
 <h2>Données en tables</h2>
 
 <h2>Réseaux sociaux</h2>
