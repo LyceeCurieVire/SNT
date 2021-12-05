@@ -15,7 +15,7 @@
 
 <h1 style="text-align:center;">Sciences du Numérique et Technologie</h1>
 
-  <p><a href="diapoprez.pdf">Diaporama de présentation</a></p>
+<p><a href="diapoprez.pdf">Diaporama de présentation</a></p>
   
 <h2>Les langages du Web</h2>
 
@@ -72,6 +72,71 @@ Nous allons donc rester sur un <a href="cahier.html">cahier des charges</a> asse
 <h2>Images et photographie numérique</h2>
 
 <h2>Internet</h2>
+
+<h3>Notion de réseau</h3>
+
+Un réseau est un enesmble d'ordinateurs reliés entre eux par des cables ou par ondes afin de pouvoir échanger des données. 
+Ces échanges de données nécessitent de nombreux protocoles, que ce soit au niveau électrique (connecteurs, voltages, fréquences des ondes) 
+ou bien au niveau du format des données échangées, mais encore au niveau du système d'exploitation : que doit faire l'ordinateur des données qu'il reçoit, quels programmes doivent les traiter ?
+
+<h3>L'internet</h3>
+
+L'internet, né dans les années 1970, est un ensemble de protocoles permettant de relier des réseaux entre eux. Essentiellement l'internet repose sur les protocoles TCP et IP.<br/>
+
+Le protocole IP (Internet Protocol) permet de faire passer des paquets de données d'un ordinateur à un autre, y compris lorsque ces ordinateurs ne sont pas directement connectés. <br/>
+
+Le protocole TCP (Transfert Control Protocol) gère la connection de bout en bout : contrôle de la bonne arrivée des paquets, numérotation des paquets pour qu'ils soient remis dans l'ordre à l'arrivée si nécessaire, etc. <br/>
+
+Le protocole UDP (User Datagram Protocol) utilise IP pour transmettre des datagrammes (des paquets de données) sans contrôle sur la bonne transmission. <br/>
+
+<h3>Adresses IP</h3>
+
+Dans la version 4 du protocole IP, appelée IPv4, chaque ordinateur sur internet possède une adresse numérique sur 4 octets,
+en général notée en donnant les écritures décimales des quatre octets, séparées par des points, p.ex 192.168.1.12 ou 10.235.22.117
+qui sont utilisées pour le routage des paquets à travers les réseaux interconnectés qui constituent l'internet. <br/>
+
+Chaque paquet IP envoyé sur internet contient alors entre autres informations l'adresse de l'expéditeur et l'adresse du destinataire,
+ainsi que des numéros de <strong>ports</strong> (sur deux octets, de 0 à 65535) pour l'expéditeur ainsi que pour le destinataire. 
+En effet, plusieurs programmes peuvent utiliser internet en même temps sur un même ordinateur, et il faut délivrer le paquet au bon destinataire. <br/> 
+
+
+<h3>Services</h3>
+
+Par dessus le protocole TCP/IP existent bien d'autres protocoles, comme http, ftp, smtp ou pop3... Chacun de ces services est un programme qui s'exécute sur un serveur 
+et qui attend les connections sur un port de numéro bien défini, afin de répondre aux requêtes.
+
+<h3>Acronymes</h3>
+
+<ul>
+  <li><strong>TCP</strong></li> Transmission Control Protocol Ce protocole sert à découper les informations transmises d'un ordinateur à un autre en paquets, 
+  à vérifier que ces paquets sont bien arrivés (avec un système d'accusé de réception), et à réassembler les paquets dans le bon ordre à l'arrivée.
+  <li><strong>IP</strong></li> Internet Protocol Ce protocole est un protocole de routage qui envoie un paquet d'un ordinateur à un autre à travers les réseaux. 
+  <li><strong>UDP</strong></li> User Datagram Protocol Ce protocole s'appuie sur IP pour envoyer des paquets isolés, sans contrôle d'acheminement, 
+  en laissant à l'application qui utilise UDP le soin de vérifier si les paquets sont bien arrivés (en général en revoyant un paquet au bout d'un certain temps sans 
+  réponse de la part de l'ordinateur distant).
+  <li><strong>DNS</strong></li> Domain Name Service Ce service d'annuaire transforme les adresses internet symboliques du type www.site.fr en adresses numériques IPv4 ou IPv6,
+  qui sont les seules comprises par IP.
+  <li><strong>ICMP</strong></li> Internet Control Message Protocol permet l'échange de messages de contrôle, utilisés en particulier pou les pings.
+  <li><strong>ICMP Echo Request (Ping)</strong></li> Ping est une commande qui permet de tester la connection à un ordinateur distant.
+  <li><strong>HTTP</strong></li> HyperText Transfert Protocol C'est le protocole utilisé par le web, pour la communication entre un navigateur et un serveur.
+  <li><strong>HTTPS</strong></li> HyperText Transfert Protocol Secure la même chose que http mais les communications sont cryptées de bout en bout.
+  <li><strong>FTP</strong></li> File Transfert Protocol Un protocle utilisé pour échanger des fichiers entre ordinateurs.
+  <li><strong>SMTP</strong></li> Simple Mail Transfert Protocol Un protocole qui sert à envoyer des mails.
+  <li><strong>POP3</strong></li> Post Office Protocol 3 Ce protocole permet de récupérer des mails en se connectant à un serveur mail.
+  <li><strong>IMAP</strong></li> Internet Message Access Protocol Ce protocole permet de consulter des mails en ligne et de gérer les mails sur le serveur, sans avoir à les télécharger sur le client.
+  <li><strong>IRC</strong></li> Internet Relay Chat C'est un protocole de discussion en mode texte sur internet, qui date de la fin des années 1980
+  <li><strong>SSH</strong></li> Secure SHell Le protocole SSH permet de se conecter à distance sur un ordianteur en ayant accès à un shell (une console) de façon sécurisée.
+</ul>
+
+<h3>Travail à faire</h3>
+
+Nous allons utiliser le logiciel <a href="https://www.lernsoftware-filius.de/Herunterladen">Filius</a> qui permet de simuler un réseau TCP/IP de façon graphique. <br/>
+
+Après avoir installé Filius, commencer le <a href="./Activite3-Filius-2019V1.pdf">TP</a>. <br/>
+
+Deux fichiers peuvent être utiles, <a href="exercice4_ressources.fls">exercice4_ressources.fls</a> et 
+<a href="exercice4bis_ressources.fls">exercice4_ressources.fls</a>.
+
 
 <h2>Données en tables</h2>
 
