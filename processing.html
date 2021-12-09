@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TP Processing</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="prism.css" rel="stylesheet" />
+<style type="text/css"><!--body { font-family:Arial,Helvetica,sans-serif; margin-left:40px }--></style>
+</head>
+
+<body>
+<script src="prism.js"></script>
+<script src="p5.min.js"></script>
+
+
+<h1> Introduction à Processing</h1>
+
+Processing est à la fois un langage et un environnement de programmation créé en 2001 par Ben Fry et Casey Reas pour la création artistique. <br/>
+Il est basé sur C/C++/Java, et utilise des {} pour délimiter les blocs d'instructions, ainsi que des ; pour finir une instruction. Voir <a href="processing.org">processing.org</a>.
+
+<p>Bien sûr, le fait que ce document soit écrit en HTML n'est pas anodin ; Ctrl-U est votre ami !
+
+<hr size=4 width=70% align=center noshade>
+<br/><br/>
+
+<h2> Un exemple commenté </h2>
+
+<pre class="line-numbers"><code class="language-processing">void setup()
+{
+  size(600,600) ;
+  frameRate(0.5) ;
+}
+
+void draw()
+{
+  float angle=frameCount*PI/4;
+  fill(255,0,0) ;
+  triangle(300,300,300+200*cos(angle),300+200*sin(angle),300+200*cos(angle-PI/4),300+200*sin(angle-PI/4)) ;
+}
+</code></pre>
+
+<ul>
+<li>Les lignes 1 à 5 définissent la fonction <code>setup</code>,</li>
+<li>qui va fixer le taille de la fenêtre d'affichage à 600 pixels de côté, en appelant le fonction <code>size</code>,</li>
+<li>et fixer la fréquence à laquelle la fonction <code>draw</code> sera appelée à 2 fois par seconde.</li>
+</ul>
+
+<ul>
+<li>La fonction <code>draw</code> est la boucle principale (son équivalent est <code>loop</code> quand on utilise processing pour Arduino).</li>
+<li>La variable <code>frameCount</code> est le numéro de l'image affichée (on commence à 1),</li>
+<li><code>float</code> permet de définir une variable "à virgule flottante",</li>
+<li><code>fill(r,g,b)</code> permet de remplir les formes qui sont tracées ensuite avec une couleur définie par ses composantes Rouge, Vert et Bleu (entre 0 et 255
+pour chacune),</li>
+<li><code>triangle(x1,y1,x2,y2,x3,y3)</code> fait précisément ce que son nom suggère,</li>
+<li>de même que <code>cos</code> et <code>sin</code> ; bien sûr les angles sont en radians d'où l'utilisation de la constante <code>PI</code>.</li>
+</ul>
+
+<hr size=4 width=70% align=center noshade>
+<br/><br/>
+
+<h2> Quelques modifications </h2>
+
+Après un tour, il ne se passe plus rien ! Nous allons modifier le programme de deux façons :
+<ul>
+<li> en rajoutant des couleurs aléatoires avec la fonction <code>random(n)</code> qui renvoie un nombre (à virgule flottante) entre 0 et n, ici on met du rouge et un peu de vert,</li>
+<li> en utilisant fill(255,255,255,alpha) qui fixe le remplissage en blanc (r=g=b=255) avec une opacité alpha, qui varie de 0 à 255 : une valeur plus faible laisse voir ce qui est derrière la figure tracée. Alors tracer
+un rectangle qui fait toute la fenêtre d'affichage permet d'estomper petit à petit les tracés antérieurs.</li>
+</ul>
+
+Placer les lignes ci-dessous au bon endroit dans le programme précédent.
+
+<pre><code class="language-processing">fill(100+random(50),50+random(50),0);
+fill(255,255,255,60);
+rect(0,0,600,600);
+</code></pre>
+
+Le fonctionnement de la fonction <code>rect</code> est tout à fait bien expliqué sur le <a href="https://processing.org/reference/rect_.html">site de processing</a>.
+
+<hr size=4 width=70% align=center noshade>
+<br/><br/>
+
+<h2> Un peu d'interactivité </h2>
+
+Déplacer la souris ci-dessous et observer ; penser à cliquer de temps en temps.
+
+<div id='myContainer'></div>
+<script src="p5script1.js"></script>
+
+<pre class="line-numbers"><code class="language-javascript">void setup()
+{
+  size(640, 480);
+}
+
+void draw() {
+  if (mousePressed) {
+    fill(0);
+  } else {
+    fill(255);
+  }
+  ellipse(mouseX, mouseY, 80, 80);
+}
+</code></pre>
+
+Les variables <code>mouseX</code> et <code>mouseY</code> contiennent la position de la souris, et <code>ellipse(x0,y0,a,b)</code> construit une ellipse de centre (x0;y0)
+avec des demi-grands axes a et b.<br/>
+La fonction <code>fill(w)</code> avec un seul argument permet de travailler avec des niveaux de gris, 0 correspond au noir et 255 au blanc.<br/>
+Le <u>booléen</u> <code>mousePressed</code> vaut vrai lorsqu'on appuie sur un bouton de la souris, faux sinon.<br/>
+Utiliser la <u>fonction</u> <code>void mousePressed() {}</code> dans un nouveau script pour tracer un cercle de rayon et de couleur aléatoire lorsqu'on clique sur la souris, en utilisant le point cliqué comme centre.
+
+
+<hr size=4 width=70% align=center noshade>
+<br/><br/>
+
+<h2> Deux marches aléatoires </h2>
+
+
+<pre class="line-numbers"><code class="language-processing">void setup()
+{
+  size(600,600);
+  strokeWeight(3);
+  background(255);
+}
+
+int x=300,y=300;
+
+void draw()
+{
+  int dx=int(random(20)-10);
+  int dy=int(random(20)-10);
+  stroke(50+int(random(200)),50+int(random(200)),30);
+  line(x,y,x+dx,y+dy);
+  x=x+dx;
+  y=y+dy;
+}
+</code></pre>
+Quelques fonctions utiles :
+<ul>
+<li><code>stroke(r,g,b)</code> permet de choisir la couleur du "pinceau", pour le tracé des lignes, des contours des triangles etc. </li>
+<li><code>strokeWeight(n)</code> permet de choisir la largeur du coup de pinceau,</li>
+<li><code>line(x1,y1,x2,y2)</code> permet de tracer un segment du point (x1;y1) au point (x2;y2).</li>
+</ul>
+
+On peut changer les lignes 12 et 13 par les lignes ci-dessous.<br/>
+Alors le point mobile avance de 10 pixels à chaque étape,dans une direction aléatoire.
+
+<pre><code class="language-processing">float theta=random(2*PI);
+int dx=int(10*cos(theta));
+int dy=int(10*sin(theta));
+</code></pre>
+
+<hr size=4 width=70% align=center noshade>
+<br/><br/>
+
+<h2> L'escargot de Pythagore </h2>
+
+<img src="escargot.gif">
+
+<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=from%20math%20import%20atan,sqrt%0A%0Abeta%3D0%0An%3D0%0Awhile%20beta%3C6.28%3A%0A%20%20%20%20n%3Dn%2B1%0A%20%20%20%20alpha%3Datan%281/sqrt%28n%29%29%0A%20%20%20%20beta%3Dbeta%2Balpha%0A%20%20%20%20print%28n%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+
+<p>Au travail !</p>
+Quelques fonctions utiles :
+<ul>
+<li>On obtient l'arctangente avec <code>atan(t)</code>, en radians bien sûr,</li>
+<li><code>sqrt(x)</code> renvoie la racine carrée.</li>
+</ul>
+
+
+<hr size=4 width=70% align=center noshade>
+<br/><br/>
+
+<h2> Des exemples artistiques</h2>
+
+On trouve sur le site <a href="https://www.openprocessing.org">openprocessing.org</a> des exemples d'utilisation de processing, par exemple <a href="https://www.openprocessing.org/sketch/143842">Noise Turbulence Doodles</a>.<br/>
+Le site de référence, où télécharger Processing, est <a href="processing.org">processing.org</a>.<br/>
+On peut aussi consulter le site <a href="http://www.explorerprocessing.info/">http://www.explorerprocessing.info/</a>, fait pour des élèves d'ISN.
+
+<p> <img src="./by-nc-sa.png" align="MIDDLE"/> Ronan Charpentier 2021 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/fr/">Licence CC-BY-NC-SA</a>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
